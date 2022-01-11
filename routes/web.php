@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccueilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AccueilController::class,'index'])->name('accueil');
+
+Route::get('/offre/{id}', [AccueilController::class, 'show'])->name('offre.show');
+
+Route::get('/contact', [AccueilController::class, 'contact'])->name('contact');
