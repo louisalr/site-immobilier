@@ -13,6 +13,12 @@
 
         <h1> Il n'y a pour l'instant aucunes offres de disponible ! </h1>
 
+        <form action="{{ route('poster.create') }}" method="get">
+
+            <button type="submit" class="border-4 border-sky-500"> Poster une offre</button>
+
+        </form> 
+
     @endif
 
 

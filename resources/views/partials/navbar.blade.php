@@ -6,7 +6,7 @@
                    
                 <a href=" {{ route('accueil') }}" class="text-white p-2 hover:bg-sky-700 rounded-md">Accueil</a>      
                 <div class="hidden md:block space-x-2">
-                    <a href=" {{ route('offre.new') }}" class="text-gray-100 hover:bg-sky-700 p-2 rounded-md"> Poster une offre</a>
+                    <a href=" {{ route('poster.create') }}" class="text-gray-100 hover:bg-sky-700 p-2 rounded-md"> Poster une offre</a>
 
 
                     <a href="{{ route('logout') }}" class="text-gray-100 hover:bg-sky-700 p-2 rounded-md" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -25,7 +25,7 @@
 
         <div class="md:hidden">
                 <div class="px-2 pb-2 space-y-1 mx-auto">
-                    <a href=" {{ route('offre.new') }}" class="text-gray-100 hover:bg-sky-700 block p-2 rounded-md"> Poster une offre </a>
+                    <a href=" {{ route('poster.create') }}" class="text-gray-100 hover:bg-sky-700 block p-2 rounded-md"> Poster une offre </a>
                     <a href="{{ route('logout') }}" class="text-gray-100 hover:bg-sky-700 block p-2 rounded-md" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         Se déconnecter
                     </a>
