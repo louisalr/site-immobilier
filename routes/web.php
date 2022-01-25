@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccueilController;
+use App\Http\Livewire\Counter;
 use App\Http\Controllers\UtilisateurController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
@@ -26,11 +27,15 @@ Route::get('/connexion', [UtilisateurController::class, 'connexion'])->name('con
 
 Route::get('/inscription', [UtilisateurController::class, 'inscription'])->name('inscription');
 
+Route::post('ajouterfavoris/{offre}', [UtilisateurController::class, 'AjouterFavoris']);
+Route::post('retirerfavoris/{offre}', [UtilisateurController::class, 'RetirerFavoris']);
 
 
 Route::group(['middleware' => ['auth']], function () { 
     Route::get('/poster/offre', [UtilisateurController::class, 'poster'])->name('poster.create');
     Route::post('/poster/offre', [UtilisateurController::class, 'enregistrer'])->name('poster.store');
+    Route::post('/offre/{id}/message', [UtilisateurController::class, 'envoyer'])->name('message.envoyer');
+    Route::get('/dashboard/favoris', [UtilisateurController::class,'favoris'])->name('dashboard.favoris');
 });
 
 
