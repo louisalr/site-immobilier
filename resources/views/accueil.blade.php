@@ -5,9 +5,45 @@
 
     @if($offres->count() > 0)
 
-        @foreach($offres as $offre) 
-            <h3 class="container mx-auto m-1 border-2"> <a href=" {{ route('offre.show' , ['id' => $offre->id])  }} ">{{ $offre -> titre }} </a> </h3>  
-        @endforeach
+
+
+        <div class="">
+            <div class="row">
+                <div>
+                    <div class="page-header">
+                        <h3 class="content-center title">Liste des 10 dernières offres </h3>
+                    </div>
+                    @forelse ($offres as $offre)
+                        <div class="panel panel-default offres-css">
+                            <div class="panel-heading title-des">
+                                <a href="{{ route('offre.show' , ['id' => $offre->id]) }}">
+                                    {{ $offre->titre }} 
+                                </a>
+                            </div>
+
+                            <div class="panel panel-default description">
+                                {{ $offre->description }}
+                            </div>
+
+                            @auth
+                            <div id="app" class="">
+                            <favorite
+                                :offre={{ $offre->id }}
+                                :favorited={{ $offre->favorited() ? 'true' : 'false' }}
+                            ></favorite>
+                            </div>
+
+                            @endauth
+                            
+                        </div>
+                    @empty
+                        <p>No post created.</p>
+                    @endforelse
+
+                </div>
+            </div>
+        </div>
+
 
     @else
 
