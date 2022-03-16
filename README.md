@@ -8,11 +8,19 @@
 </p>
 
 ## What you need to run this project
-    
+
     PHP
     PostgreSQL
     Nodejs
     
+
+**To install the packages needed to run this project**
+
+```bash
+npm install
+npm run dev
+```
+
 ## How to run this project
 
     Edit the .env file with your credentials
@@ -23,12 +31,24 @@
     DB_DATABASE='name of database'
     DB_USERNAME='name'
     DB_PASSWORD='password'
-    
+
+You need to create the database before exporting the database tables
+
+```bash
+php artisan migrate
+```
+
 Then 
 
     php artisan serve
-    
-    
+
+If everything works as attended, you should see a page looking like this : 
+
+
+
+![ScreenShot] (page_accueil.png)
+
+
 
 ## License
 
